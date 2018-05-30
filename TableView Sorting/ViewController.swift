@@ -10,16 +10,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let employeeDirectory = EmployeeDirectory()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        employeeDirectory.update()
+        
     }
 
 
+}
+
+extension ViewController: UITabBarDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let employeeCell = UITableViewCell(style: .default, reuseIdentifier: "")
+        employeeCell.textLabel?.text = ""
+        return employeeCell
+    }
+    
+    
 }
 
