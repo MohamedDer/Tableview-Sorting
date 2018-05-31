@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import PromiseKit
-
 
 class EmployeeDirectory: NSObject {
     
