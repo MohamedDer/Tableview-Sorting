@@ -11,7 +11,7 @@ import Foundation
 
 class Employee  {
     
-    private let name: String
+    let name: String
     private let birthYear: Int
     private var salary: Int?
     

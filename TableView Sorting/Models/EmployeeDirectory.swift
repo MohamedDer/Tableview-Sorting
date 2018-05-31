@@ -7,15 +7,17 @@
 //
 
 import Foundation
+import PromiseKit
 
 
 class EmployeeDirectory: NSObject {
+    
     
     var employees: [Employee]?
     var isUpdating = false
     
     
-    func update(){
+    func update() {
         if isUpdating {
             return
         } else {
@@ -27,7 +29,7 @@ class EmployeeDirectory: NSObject {
     }
     
     
-    func updateEmployeesInTheBackground() {
+    func updateEmployeesInTheBackground()   {
         sleep(2)
         let names = ["Anne", "Lucas", "Marc", "Zeus", "Hermes", "Bart", "Paul", "John","Ringo", "Dave", "Taylor"]
         let surnames = ["Hawkins", "Simpson", "Lennon", "Grohl", "Hawkins", "Jacobs",
@@ -38,10 +40,8 @@ class EmployeeDirectory: NSObject {
             let fullName = "\(names[Int(arc4random_uniform(UInt32(names.count)))]) \(surnames[Int(arc4random_uniform(UInt32(surnames.count)))])"
             employees.append(Employee(name: fullName, birthYear: 1997 - Int(arc4random_uniform(50))))
         }
-        DispatchQueue.main.async {
-            self.updateDidFinishWithResults(employees: employees)
-        }
-        
+
+        self.updateDidFinishWithResults(employees: employees)
     }
     
     

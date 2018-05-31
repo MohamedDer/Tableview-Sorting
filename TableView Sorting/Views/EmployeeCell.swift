@@ -6,4 +6,12 @@
 //  Copyright © 2018 Mohamed Derkaoui. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class EmployeeCell: UITableViewCell {
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var salaryLabel: UILabel!
+    @IBOutlet weak var birthYearLabel: UILabel!
+    
+}
