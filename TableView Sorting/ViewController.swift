@@ -48,10 +48,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeeCell", for: indexPath) as! EmployeeCell
-        cell.nameLabel.text = myEmployees?[indexPath.row].getName()
-        cell.birthYearLabel.text = "\(myEmployees?[indexPath.row].getBirthYear() ?? 1996)"
-        cell.salaryLabel.text = myEmployees?[indexPath.row].getSalary()
+        let cell = EmployeeCell(style: UITableViewCellStyle.default, reuseIdentifier: "EmployeeCell")
+        
+        
+        cell.nameLabel.text = "Name : \(myEmployees?[indexPath.row].getName() ?? "")"
+        cell.birthyearLabel.text = "Birth Year: \(myEmployees?[indexPath.row].getBirthYear() ?? 1996)"
+        cell.salaryLabel.text = "Salary : \(myEmployees?[indexPath.row].getSalary() ?? "" )"
         return cell
     }
     
