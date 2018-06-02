@@ -27,7 +27,7 @@ class EmployeeCell: UITableViewCell {
         contentView.addSubview(salaryLabel)
         contentView.addSubview(birthyearLabel)
         
-        self.backgroundColor = backgroundColors[Int(arc4random_uniform(UInt32(backgroundColors.count)))]
+        self.backgroundColor = backgroundColors[Int(arc4random_uniform(UInt32(backgroundColors.count)))].withAlphaComponent(0.4)
         
         let randomStyle = Int(arc4random_uniform(3))
         
